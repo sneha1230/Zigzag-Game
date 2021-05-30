@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-    public GameObject leftTile,forwardTile;
+    public GameObject [] tiles;
     public GameObject currentTile;
+    private static TileManager instance;
+    public static TileManager Instance
+    {
+        get
+        {
+            if(instance==null)
+            {
+                instance=GameObject.FindObjectOfType<TileManager>();
+            }
+            return instance;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
-        for(int i=0; i<10; i++)
-        {
-            SpawnTile();
-        }
         
     }
 
@@ -21,8 +29,9 @@ public class TileManager : MonoBehaviour
     {
         
     }
-    void SpawnTile()
+    public void SpawnTile()
     {
-        currentTile=(GameObject)Instantiate(forwardTile,currentTile.transform.GetChild(0).position,Quaternion.identity);
+        int index=Random.Range(0,tiles.Length);
+        currentTile=Instantiate(tiles[index],currentTile.transform.GetChild(index).position,Quaternion.identity);
     }
 }

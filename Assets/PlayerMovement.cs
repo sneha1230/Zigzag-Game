@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     Vector3 direction;
     public float PlayerSpeed;
+    
     // Start is called before the first frame update
     void Start()
     {
