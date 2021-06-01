@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Tiles : MonoBehaviour
 {
+    Rigidbody tempRigidbody;
     // Start is called before the first frame update
     
     void Start()
     {
-        
+        tempRigidbody=GetComponentInParent<Rigidbody>();
+        Debug.Log(tempRigidbody.name);
     }
 
     // Update is called once per frame
@@ -20,11 +22,29 @@ public class Tiles : MonoBehaviour
     {
         if(other.tag=="Player")
         {
-            for(int i=0; i<5; i++)
-        {
-            TileManager.Instance.SpawnTile();
-        }
+            
+                TileManager.Instance.SpawnTile();
+                StartCoroutine("FallDown");
            
+        }
+    }
+    IEnumerator FallDown()
+    {
+        yield return new WaitForSeconds(3);
+        tempRigidbody.isKinematic=false;
+        yield return new WaitForSeconds(1);
+        tempRigidbody.isKinematic=true;
+        if(tempRigidbody.gameObject.name=="ForwardTile")
+        {
+            
+            TileManager.Instance.AddForwardTilePool(tempRigidbody.gameObject);
+            Debug.Log("Added to forward pool");
+        }
+        else if(tempRigidbody.gameObject.name=="LeftTile")
+        {
+            
+             TileManager.Instance.AddLeftTilePool(tempRigidbody.gameObject);
+             Debug.Log("Added to left pool");
         }
     }
 }

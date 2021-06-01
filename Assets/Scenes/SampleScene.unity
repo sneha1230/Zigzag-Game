@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
-  PlayerSpeed: 1
+  PlayerSpeed: 2
 --- !u!1 &1480358767
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,23 +569,6 @@ MonoBehaviour:
   - {fileID: 1727483967}
   - {fileID: 2035878172712186519, guid: 47512e67fe571384da064f955d0388d2, type: 3}
   currentTile: {fileID: 1727483967}
---- !u!1 &1597335962 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1597335962, guid: 93428ca4c507d7940abfc222e31cda62, type: 3}
-  m_PrefabInstance: {fileID: 1727483966}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1597335965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597335962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4670d1f386913b642a39a6087594c568, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1727483966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -593,10 +576,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1597335964, guid: 93428ca4c507d7940abfc222e31cda62, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1751194741539143363, guid: 93428ca4c507d7940abfc222e31cda62, type: 3}
       propertyPath: m_RootOrder
       value: 4
