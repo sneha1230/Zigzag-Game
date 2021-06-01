@@ -77,5 +77,11 @@ public class TileManager : MonoBehaviour
             temp.transform.position=currentTile.transform.GetChild(1).position;
             currentTile=temp;
         }
+        //to spawn the pickup coin randomly
+        int pickupCoinsRange=Random.Range(0,10);
+        if(pickupCoinsRange==Random.Range(0,10))
+        {
+            currentTile.transform.GetChild(3).gameObject.SetActive(true);
+        }
     }
 }

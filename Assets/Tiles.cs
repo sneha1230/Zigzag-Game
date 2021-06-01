@@ -10,7 +10,7 @@ public class Tiles : MonoBehaviour
     void Start()
     {
         tempRigidbody=GetComponentInParent<Rigidbody>();
-        Debug.Log(tempRigidbody.name);
+       // Debug.Log(tempRigidbody.name);
     }
 
     // Update is called once per frame
@@ -38,13 +38,13 @@ public class Tiles : MonoBehaviour
         {
             
             TileManager.Instance.AddForwardTilePool(tempRigidbody.gameObject);
-            Debug.Log("Added to forward pool");
+            //Debug.Log("Added to forward pool");
         }
         else if(tempRigidbody.gameObject.name=="LeftTile")
         {
             
              TileManager.Instance.AddLeftTilePool(tempRigidbody.gameObject);
-             Debug.Log("Added to left pool");
+             //Debug.Log("Added to left pool");
         }
     }
 }

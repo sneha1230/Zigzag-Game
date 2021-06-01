@@ -31,4 +31,12 @@ public class PlayerMovement : MonoBehaviour
         }
         transform.Translate(direction*PlayerSpeed*Time.deltaTime);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag=="Pickup")
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
